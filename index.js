@@ -32,5 +32,13 @@ function toggleAnimate() {
 
 function changeValue(value) {
     const elem = document.getElementById('progressBar')
+    const input = document.getElementById('numberInput')
+    if (value > 100) {
+        value = 100
+        input.value = 100        
+    } else if (value < 0) {
+        value = 0
+        input.value = 0
+    }
     elem.style.background = `radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(#0f7bd3 ${value}%, #ccc 0%)`;
 }
